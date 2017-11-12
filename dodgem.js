@@ -79,7 +79,6 @@ function movePlayer() {
 }
 
 function endGame() {
-  alert("You died!")
   window.clearInterval(gameLoopInterval)
 }
 
@@ -136,10 +135,10 @@ $('html').keydown(function(e) {
   if (/[a-z]/.test(e.key)) {
     var coords = keyCoords(e.key)
     var scaleX = WORLD_WIDTH / 10
-    var scaleY = 100
+    var scaleY = 80
     player.target = {
       x: 100 + (coords.x * scaleX),
-      y: (WORLD_HEIGHT - 300) + (coords.y * scaleY)
+      y: (WORLD_HEIGHT - scaleY*3) + (coords.y * scaleY)
     }
   }
 })
